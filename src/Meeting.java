@@ -29,6 +29,16 @@ public class Meeting extends Event implements Completable{
     public Duration getDuration(){
         return Duration.between(start, end);
     }
+    public String getLocation(){
+        return location;
+    }
+    public void setEndTime(LocalDateTime end){
+        super.setDateTime(end);
+    }
+    public void setLocation(String location){
+        this.location = location;
+    }
+
 
 
 
