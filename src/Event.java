@@ -23,7 +23,8 @@ public class Event {
         this.name = name;
     }
     public int compareTo(Event e){
-        int compare = dateTime.compareTo(e.dateTime);
+        int compare;
+        compare = dateTime.compareTo(e.dateTime);
         return compare;
     }
 }
