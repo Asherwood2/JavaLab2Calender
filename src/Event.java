@@ -1,7 +1,8 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Event {
+
+public abstract class Event implements Comparable<Event> {
 
     protected String name = "";
     protected LocalDateTime dateTime;
