@@ -1,15 +1,46 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 public class EventTester {
+    //private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    Deadline1();
+    Deadline2();
+    meeting1();
+    meeting2();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("tests are completed");
         }
+
+    public static void Deadline1(){
+        LocalDateTime datetime = LocalDateTime.of(2025, 4, 22, 11, 59);
+        Deadline Deadline1 = new Deadline("Implementing code for time machine", datetime);
+        System.out.println(Deadline1.getName());
+        System.out.println(Deadline1.getDateTime()); // Use formatter here
+        System.out.println(Deadline1.getDateTime());
+        System.out.println(Deadline1.isComplete());
+        Deadline1.complete();
+        System.out.println(Deadline1.isComplete());
+    }
+    public static void Deadline2() {
+        LocalDateTime datetime = LocalDateTime.of(2025, 3, 30, 11, 59);
+        Deadline Deadline2 = new Deadline("Homework", datetime);
+        System.out.println(Deadline2.getName());
+        System.out.println(Deadline2.getDateTime());
+        System.out.println(Deadline2.isComplete());
+        Deadline2.complete();
+        System.out.println(Deadline2.isComplete());
+    }
+    public static void meeting1(){
+        LocalDateTime Start_time = LocalDateTime.of(2025, 3, 30, 14, 0);
+        LocalDateTime End_time = LocalDateTime.of(2025, 3, 30, 15, 0);
+            Meeting meeting1 = new Meeting("Meeting for goals before summer", Start_time, End_time, "2nd floor conference room");
+    }
+    public static void meeting2(){
+        LocalDateTime Start_time = LocalDateTime.of(2025, 4, 1, 10, 0);
+        LocalDateTime End_time = LocalDateTime.of(2025, 4, 1, 11, 0);
+        Meeting meeting1 = new Meeting("Follow up on code for time machine", Start_time, End_time, "Remote");
     }
 }
+
+
+

@@ -42,12 +42,12 @@ public class EventListPanel extends JPanel {
         });
 
         //task checkbox for displaying different tasks
-        filterDisplay = new JCheckBox("Event filter");
-        filterDisplay.addItemListener(new java.awt.event.ItemListener() {
-                                            public void itemStateChanged(ItemEvent e) {
+        //filterDisplay = new JCheckBox("Event filter");
+        //filterDisplay.addItemListener(new java.awt.event.ItemListener() {
+          //                                  public void itemStateChanged(ItemEvent e) {
 
-                                            });
-                                        };
+            //                                });
+              //                          };
 
 
 
