@@ -1,24 +1,22 @@
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 public abstract class Event implements Comparable<Event> {
 
-    protected String name = "";
+    protected String name;
     protected LocalDateTime dateTime;
-
-    public Event(){
-
-    }
-    public Event(String name){
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    public Event(String name, LocalDateTime dateTime){
         this.name = name;
+        this.dateTime = dateTime;
     }
     public String getName(){
         return name;
     }
 
-    public LocalDateTime getDateTime(){
-        return dateTime;
+    public String getDateTime(){
+        return dateTime.format(formatter);
     }
     public void setDateTime(LocalDateTime dateTime){
         this.dateTime = dateTime;
@@ -28,9 +26,6 @@ public abstract class Event implements Comparable<Event> {
     }
     @Override
     public int compareTo(Event e){
-        //int compare;
-        //compare = dateTime.compareTo(e.dateTime);
-        //return compare;
-        return this.name.compareTo(e.name);
+        return this.dateTime.compareTo(e.dateTime);
     }
 }

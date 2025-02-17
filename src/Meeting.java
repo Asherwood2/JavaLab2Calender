@@ -1,19 +1,17 @@
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class Meeting extends Event implements Completable{
-    private LocalDateTime start;
+class Meeting extends Event implements Completable{
     private LocalDateTime end;
     private String location;
     private boolean complete;
 
 
-    Meeting(String name, LocalDateTime start, LocalDateTime end, String location) {
-        super(name);
-        this.start = start;
+    public Meeting(String name, LocalDateTime start, LocalDateTime end, String location) {
+        super(name, start);
         this.end = end;
         this.location = location;
-        complete = false;
+        this.complete = false;
     }
     @Override
     public void complete(){
@@ -27,7 +25,7 @@ public class Meeting extends Event implements Completable{
         return end;
     }
     public Duration getDuration(){
-        return Duration.between(start, end);
+        return Duration.between(dateTime, end);
     }
     public String getLocation(){
         return location;
