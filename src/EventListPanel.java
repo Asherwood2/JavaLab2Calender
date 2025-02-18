@@ -17,6 +17,10 @@ public class EventListPanel extends JPanel {
 
     events = new ArrayList<>();
 
+        controlPanel = new JPanel();
+
+        displayPanel = new JPanel();
+
         //JComboBox to sort events
         sortDropDown = new JComboBox();
         sortDropDown.addItem("name");
@@ -42,12 +46,13 @@ public class EventListPanel extends JPanel {
         });
 
         //task checkbox for displaying different tasks
-        //filterDisplay = new JCheckBox("Event filter");
-        //filterDisplay.addItemListener(new java.awt.event.ItemListener() {
-          //                                  public void itemStateChanged(ItemEvent e) {
+        filterDisplay = new JCheckBox("Event filter");
+        filterDisplay.addItemListener(new java.awt.event.ItemListener() {
+                                           public void itemStateChanged(ItemEvent e) {
+                                               boolean isSelected = (e.getStateChange() == ItemEvent.SELECTED);
 
-            //                                });
-              //                          };
+                                            }
+                                      });
 
 
 
@@ -57,7 +62,14 @@ public class EventListPanel extends JPanel {
         addEventButton.addActionListener(e -> {
         new AddEventModal(SwingUtilities.getWindowAncestor(EventListPanel.this));
         });
+
+
+        controlPanel.add(sortDropDown);
+        controlPanel.add(addEventButton);
+
+        controlPanel.setVisible(true);
         };
+
 }
 
 

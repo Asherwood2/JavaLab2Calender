@@ -6,6 +6,7 @@ public abstract class Event implements Comparable<Event> {
 
     protected String name;
     protected LocalDateTime dateTime;
+    //Formatter for outputting date in a nicer way
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     public Event(String name, LocalDateTime dateTime){
         this.name = name;
